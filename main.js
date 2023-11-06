@@ -12,7 +12,7 @@ recognition.onresult = function (event){
 
     document.getElementById("textbox").innerHTML = Content;
 
-    if (Content=="take my selfie")
+    if (Content=="take my selfie" || Content=='Take my selfie.')
     {
         console.log("taking selfie in 5 sec ---");
         speak();
@@ -20,7 +20,7 @@ recognition.onresult = function (event){
 }}
     
 function speak(){
-    var synth = window.SpeechSynthesis;
+    var synth = window.speechSynthesis;
 
 
     speak_data = "Taking your selfie in 5 seconds"
@@ -50,7 +50,7 @@ camera = document.getElementById("camera");
 function take_snapshot()
 {
     Webcam.snap(function(data_uri){
-        documnet.getElementById("result").innerHTML = '<img id= "selfie_image" src=" '+data_uri+'">';
+        document.getElementById("result").innerHTML = '<img id= "selfie_image" src=" '+data_uri+'">';
 
     });
 }
